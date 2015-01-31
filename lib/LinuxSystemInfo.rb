@@ -2,7 +2,7 @@ require 'LinuxSystemInfo/version'
 
 module LinuxSystemInfo
   class << self
-    def connection_info
+    def connection
       output = Hash.new
       network = `ifconfig`
       network = network.split("\n\n")
@@ -22,7 +22,7 @@ module LinuxSystemInfo
       output
     end
 
-    def cpu_info
+    def cpu
       cpu = `lscpu`
       cpu = cpu.split("\n")
 
@@ -50,7 +50,7 @@ module LinuxSystemInfo
       }
     end
 
-    def memory_info
+    def memory
       ram = `free -m`
       ram = ram.split("\n")[1].split
       {
@@ -64,7 +64,7 @@ module LinuxSystemInfo
       }
     end
 
-    def storage_info
+    def storage
       output = Hash.new
       storage = `df -h`
       storage = storage.split("\n")
@@ -82,13 +82,13 @@ module LinuxSystemInfo
       output
     end
 
-    def video_info
+    def video
       video = `lspci`
       video = video.split("\n").find { |e| /VGA/ =~ e }
       video.split(':')[2].strip
     end
 
-    def audio_info
+    def audio
       data = Array.new
       audio = `lspci`
       audios = audio.split("\n").grep /Audio/
@@ -99,7 +99,7 @@ module LinuxSystemInfo
       data
     end
 
-    def usb_info
+    def usb
       data = Array.new
       usb = `lspci`
       usb = usb.split("\n")
@@ -111,7 +111,7 @@ module LinuxSystemInfo
       data
     end
 
-    def network_info
+    def network
       data = Array.new
       connection = `lspci`
       connection = connection.split("\n")
@@ -123,16 +123,21 @@ module LinuxSystemInfo
       data
     end
 
+    def hostname
+      { hostname: `hostname`.strip }
+    end
+
     def to_hash
       {
-        :cpu        => cpu_info,
-        :ram        => memory_info,
-        :storage    => storage_info,
-        :network    => network_info,
-        :connection => connection_info,
-        :video      => video_info,
-        :audio      => audio_info,
-        :usb        => usb_info
+        :hostname   => hostname,
+        :cpu        => cpu,
+        :ram        => memory,
+        :storage    => storage,
+        :network    => network,
+        :connection => connection,
+        :video      => video,
+        :audio      => audio,
+        :usb        => usb
       }
     end
 

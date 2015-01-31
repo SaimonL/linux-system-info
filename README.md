@@ -22,6 +22,48 @@ Or install it yourself as:
 
 ## Usage
 
+### CPU
+
+LinuxSystemInfo.cpu
+
+```
+{
+  :model=> {
+    :name=>" Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz",
+    :number=>"58"
+  },
+  :address_sizes=>" 36 bits physical, 48 bits virtual",
+  :architecture=>"x86_64",
+  :threads=>"2",
+  :cores=>"2",
+  :socket=>"1",
+  :family=>"6",
+  :flags=>" fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms",
+  :L1=>{
+    :d=>"32K",
+    :i=>"32K"
+  },
+  :L2=>"256K",
+  :L3=>"4096K"
+}
+```
+
+### RAM
+
+LinuxSystemInfo.memory
+
+```
+{
+  :unit=>"Megabyte",
+  :total=>"7431",
+  :used=>"4550",
+  :free=>"2881",
+  :shared=>"493",
+  :buffers=>"85",
+  :cached=>"2036"
+}
+```
+
 Coming soon....
 
 ## Contributing
