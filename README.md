@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SaimonL/linux-system-info.svg)](https://travis-ci.org/SaimonL/linux-system-info)
+
 # LinuxSystemInfo
 
 Linux System Info is a gem that allows you to get information about you're linux
