@@ -74,7 +74,7 @@ module LinuxSystemInfo
         output[file[0]] = {
           :size            => file[1],
           :used            => file[2],
-          :avail           => file[3],
+          :available       => file[3],
           :used_percentage => file[4],
           :mount           => file[5]
         }
@@ -94,7 +94,7 @@ module LinuxSystemInfo
       audios = audio.split("\n").grep /Audio/
       audios.each do |audio|
         audio = audio.split(':')
-        data.push audio[2]
+        data.push audio[2].strip
       end
       data
     end
@@ -106,7 +106,7 @@ module LinuxSystemInfo
       usbs = usb.grep /USB/
       usbs.each do |usb|
         usb = usb.split(':')
-        data.push usb[2]
+        data.push usb[2].strip
       end
       data
     end
@@ -118,13 +118,13 @@ module LinuxSystemInfo
       connections = connection.grep /(Network|Ethernet)/
       connections.each do |connection|
         connection = connection.split(':')
-        data.push connection[2]
+        data.push connection[2].strip
       end
       data
     end
 
     def hostname
-      { hostname: `hostname`.strip }
+      `hostname`.strip
     end
 
     def to_hash
@@ -142,10 +142,6 @@ module LinuxSystemInfo
     end
 
     def to_s
-      JSON.pretty_generate to_hash
-    end
-
-    def to_json
       JSON.pretty_generate to_hash
     end
   end

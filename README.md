@@ -28,23 +28,25 @@ LinuxSystemInfo.cpu
 
 ```
 {
-  :model=> {
-    :name=>" Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz",
-    :number=>"58"
+  :model=>
+  {
+    :name => "Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz",
+    :number => "58"
   },
-  :address_sizes=>" 36 bits physical, 48 bits virtual",
-  :architecture=>"x86_64",
-  :threads=>"2",
-  :cores=>"2",
-  :socket=>"1",
-  :family=>"6",
-  :flags=>" fpu vme de pse tsc msr pae mce cx8 apic ...",
-  :L1=>{
-    :d=>"32K",
-    :i=>"32K"
+  :address_sizes => "36 bits physical, 48 bits virtual",
+  :architecture => "x86_64",
+  :threads => "2",
+  :cores => "2",
+  :socket => "1",
+  :family => "6",
+  :flags => "fpu vme de pse tsc msr pae mce cx8 apic ...",
+  :L1=>
+  {
+    :d => "32K",
+    :i => "32K"
   },
-  :L2=>"256K",
-  :L3=>"4096K"
+  :L2 => "256K",
+  :L3 => "4096K"
 }
 ```
 
@@ -54,17 +56,230 @@ LinuxSystemInfo.memory
 
 ```
 {
-  :unit=>"Megabyte",
-  :total=>"7431",
-  :used=>"4550",
-  :free=>"2881",
-  :shared=>"493",
-  :buffers=>"85",
-  :cached=>"2036"
+  :unit => "Megabyte",
+  :total => "7431",
+  :used => "4550",
+  :free => "2881",
+  :shared => "493",
+  :buffers => "85",
+  :cached => "2036"
 }
 ```
 
-Coming soon....
+#### Storage
+
+LinuxSystemInfo.storage
+
+```
+{
+  "/dev/sda1" =>
+  {
+    :size => "88G",
+    :used => "14G",
+    :available => "70G",
+    :used_percentage => "17%",
+    :mount => "/"
+  },
+  "/dev/sda8" =>
+  {
+    :size => "114G",
+    :used => "51G",
+    :available => "63G",
+    :used_percentage => "45%",
+    :mount => "/home"
+  },
+  "/dev/sda6" =>
+  {
+    :size => "12G",
+    :used => "2.0G",
+    :available => "9.3G",
+    :used_percentage => "18%",
+    :mount => "/repos"
+  },
+  "/dev/sda5" =>
+  {
+    :size => "23G",
+    :used => "3.1G",
+    :available => "20G",
+    :used_percentage => "14%",
+    :mount => "/virtualbox"
+  }
+}
+```
+
+#### Connection
+
+LinuxSystemInfo.connection
+
+```
+{
+  "eth0" =>
+  {
+    :mac => "80:2f:d5:6b:d5:88",
+    :ip => "192.168.1.23",
+    :mask => "255.255.255.0",
+    :broadcast => "192.168.1.255",
+    :ip6 => "fe80::c23f:d5ff:fe6b:d5c8/64"
+  }
+}
+```
+
+#### Video
+
+LinuxSystemInfo.video
+
+```
+"Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)"
+```
+
+#### Audio
+
+LinuxSystemInfo.audio
+
+```
+[
+  "Intel Corporation Haswell-ULT HD Audio Controller (rev 09)",
+  "Intel Corporation Lynx Point-LP HD Audio Controller (rev 04)"
+]
+```
+
+#### USB
+
+LinuxSystemInfo.usb
+
+```
+[
+  "Intel Corporation Lynx Point-LP USB xHCI HC (rev 04)",
+  "Intel Corporation Lynx Point-LP USB EHCI #1 (rev 04)"
+]
+```
+
+#### Network
+
+LinuxSystemInfo.network
+
+```
+[
+  "Intel Corporation Ethernet Connection I218-V (rev 04)",
+  "Intel Corporation Wireless 7260 (rev 73)"
+]
+```
+
+#### Host
+
+LinuxSystemInfo.hostname
+
+```
+"example.com"
+```
+
+#### Hash
+
+LinuxSystemInfo.to_hash
+
+```
+{
+  :hostname => "example.com",
+  :cpu=>
+  {
+    :model=>
+    {
+      :name => "Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz",
+      :number => "69"
+    },
+    :address_sizes => "39 bits physical, 48 bits virtual",
+    :architecture => "x86_64",
+    :threads => "2",
+    :cores => "2",
+    :socket => "1",
+    :family => "6",
+    :flags => "fpu vme de pse tsc msr pae mce cx8 apic ...",
+    :L1=>
+    {
+      :d => "32K",
+      :i => "32K"
+    },
+    :L2 => "256K",
+    :L3 => "3072K"
+  },
+  :ram=>
+  {
+    :unit => "Megabyte",
+    :total => "15001",
+    :used => "4419",
+    :free => "10582",
+    :shared => "330",
+    :buffers => "231",
+    :cached => "1836"
+  },
+  :storage=>
+  {
+    "/dev/sda1" =>
+    {
+      :size => "88G",
+      :used => "14G",
+      :available => "70G",
+      :used_percentage => "17%",
+      :mount => "/"
+    },
+    "/dev/sda8" =>
+    {
+      :size => "114G",
+      :used => "51G",
+      :available => "63G",
+      :used_percentage => "45%",
+      :mount => "/home"
+    },
+    "/dev/sda6" =>
+    {
+      :size => "12G",
+      :used => "2.0G",
+      :available => "9.3G",
+      :used_percentage => "18%",
+      :mount => "/repos"
+    },
+    "/dev/sda5" =>
+    {
+      :size => "23G",
+      :used => "3.1G",
+      :available => "20G",
+      :used_percentage => "14%",
+      :mount => "/virtualbox"
+    }
+  },
+  :network=>
+  [
+    "Intel Corporation Ethernet Connection I218-V (rev 04)",
+    "Intel Corporation Wireless 7260 (rev 73)"
+  ],
+  :connection=>
+  {
+    "eth0" =>
+    {
+      :mac => "80:2f:d5:6b:d5:88",
+      :ip => "192.168.1.23",
+      :mask => "255.255.255.0",
+      :broadcast => "192.168.1.255",
+      :ip6 => "fe80::c23f:d5ff:fe6b:d5c8/64"
+    }
+  },
+  :video => "Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)",
+  :audio =>
+  [
+    "Intel Corporation Haswell-ULT HD Audio Controller (rev 09)",
+    "Intel Corporation Lynx Point-LP HD Audio Controller (rev 04)"
+  ],
+  :usb =>
+  [
+    "Intel Corporation Lynx Point-LP USB xHCI HC (rev 04)",
+    "Intel Corporation Lynx Point-LP USB EHCI #1 (rev 04)"
+  ]
+}
+```
+
+Notice: to_s prints the hash as JSON what is for printing purpose only.
+Example: LinuxSystemInfo.to_s
+
 
 ## Contributing
 

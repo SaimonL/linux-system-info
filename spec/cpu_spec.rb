@@ -27,39 +27,39 @@ describe 'With cpu info' do
     end
 
     it 'will have threads' do
-      expect(@cpu[:threads]).to_not be_empty
+      expect(@cpu[:threads].to_i).to be >= 0
     end
 
     it 'will have cores' do
-      expect(@cpu[:cores]).to_not be_empty
+      expect(@cpu[:cores].to_i).to be > 0
     end
 
     it 'will have socket' do
-      expect(@cpu[:socket]).to_not be_empty
+      expect(@cpu[:socket].to_i).to be > 0
     end
 
     it 'will have family' do
-      expect(@cpu[:family]).to_not be_empty
+      expect(@cpu[:family]).to_not be_nil
     end
 
     it 'will have flags' do
-      expect(@cpu[:flags]).to_not be_empty
+      expect(@cpu[:flags]).to_not be_nil
     end
 
     it 'will have L1d' do
-      expect(@cpu[:L1][:d]).to_not be_empty
+      expect(@cpu[:L1][:d]).to match /\d+K/
     end
 
     it 'will have L1i' do
-      expect(@cpu[:L1][:i]).to_not be_empty
+      expect(@cpu[:L1][:i]).to match /\d+K/
     end
 
     it 'will have L2' do
-      expect(@cpu[:L2]).to_not be_empty
+      expect(@cpu[:L2]).to match /\d+K/
     end
 
     it 'will have L3' do
-      expect(@cpu[:L3]).to_not be_empty
+      expect(@cpu[:L3]).to match /\d+K/
     end
   end
 end
