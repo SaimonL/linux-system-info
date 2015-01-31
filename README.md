@@ -12,10 +12,16 @@ only for your local computer and for Linux Debain or Redhat based operating syst
 The following utility is needed to get a list of devices connected to the PCI bus.
 
 Debain based linux
-    sudo apt-get install pciutils
+
+```bash
+sudo apt-get install pciutils
+````
 
 RedHat based linux
-    sudo yum install pciutils
+
+```bash
+sudo yum install pciutils
+````
 
 ## Installation
 
