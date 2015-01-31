@@ -1,6 +1,6 @@
-
-
 # LinuxSystemInfo
+
+[![Dependency Status](https://gemnasium.com/SaimonL/linux-system-info.svg)](https://gemnasium.com/SaimonL/linux-system-info)
 
 Linux System Info is a gem that allows you to get information about you're linux
 computer. It retrieves information such as CPU, RAM, Hard drive etc. This works
