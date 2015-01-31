@@ -1,5 +1,6 @@
 # LinuxSystemInfo
 
+[![Gem Version](https://badge.fury.io/rb/LinuxSystemInfo.svg)](http://badge.fury.io/rb/LinuxSystemInfo)
 [![Dependency Status](https://gemnasium.com/SaimonL/linux-system-info.svg)](https://gemnasium.com/SaimonL/linux-system-info)
 
 Linux System Info is a gem that allows you to get information about you're linux
