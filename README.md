@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SaimonL/linux-system-info.svg)](https://travis-ci.org/SaimonL/linux-system-info)
+
 
 # LinuxSystemInfo
 

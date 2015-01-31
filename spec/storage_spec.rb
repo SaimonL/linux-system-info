@@ -15,15 +15,15 @@ describe 'With storage info' do
     end
 
     it 'will have valid size' do
-      expect(@storage.first.last[:size]).to match /\d+G/
+      expect(@storage.first.last[:size]).to match /\d+(G|M)/
     end
 
     it 'will have valid used' do
-      expect(@storage.first.last[:used]).to match /\d+G/
+      expect(@storage.first.last[:used]).to match /\d+(G|M)/
     end
 
     it 'will have valid available' do
-      expect(@storage.first.last[:available]).to match /\d+G/
+      expect(@storage.first.last[:available]).to match /\d+(G|M)/
     end
 
     it 'will have valid used_percentage' do
@@ -36,38 +36,3 @@ describe 'With storage info' do
 
   end
 end
-
-# {
-#   "/dev/sda1"=>
-#     {
-#       :size=>"88G",
-#       :used=>"14G",
-#       :available=>"70G",
-#       :used_percentage=>"17%",
-#       :mount=>"/"
-#     },
-#   "/dev/sda8"=>
-#     {
-#       :size=>"114G",
-#       :used=>"51G",
-#       :avail=>"63G",
-#       :used_percentage=>"45%",
-#       :mount=>"/home"
-#     },
-#   "/dev/sda6"=>
-#     {
-#       :size=>"12G",
-#       :used=>"2.0G",
-#       :avail=>"9.3G",
-#       :used_percentage=>"18%",
-#       :mount=>"/repos"
-#     },
-#   "/dev/sda5"=>
-#     {
-#       :size=>"23G",
-#       :used=>"3.1G",
-#       :avail=>"20G",
-#       :used_percentage=>"14%",
-#       :mount=>"/virtualbox"
-#     }
-# }
