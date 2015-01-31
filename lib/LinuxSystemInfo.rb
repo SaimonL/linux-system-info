@@ -29,7 +29,7 @@ module LinuxSystemInfo
       cpu_detail = `cat /proc/cpuinfo`
       cpu_detail = cpu_detail.split("\n")
 
-      {
+      output = {
         :model         => {
           :name   => cpu_detail.grep(/model name/).first.split(':').last,
           :number => cpu.grep(/Model/).first.split.last
@@ -41,13 +41,18 @@ module LinuxSystemInfo
         :socket        => cpu.grep(/Socket/).first.split.last,
         :family        => cpu.grep(/family/).first.split.last,
         :flags         => cpu_detail.grep(/flags/).first.split(':').last,
-        :L1            => {
-          :d => cpu.grep(/L1d cache/).first.split.last,
-          :i => cpu.grep(/L1i cache/).first.split.last
-        },
         :L2            => cpu.grep(/L2 cache/).first.split.last,
         :L3            => cpu.grep(/L3 cache/).first.split.last
       }
+
+      (1..50).each do |l|
+        find = "L#{l}[a-z]* cache:"
+        unless cpu.grep(/#{find}/) == []
+          output.merge!({ :"L#{l}" => cpu.grep(/#{find}/).first.split(':').last.strip })
+        end
+      end
+
+      output
     end
 
     def memory
