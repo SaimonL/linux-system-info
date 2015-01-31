@@ -7,6 +7,16 @@ Linux System Info is a gem that allows you to get information about you're linux
 computer. It retrieves information such as CPU, RAM, Hard drive etc. This works
 only for your local computer and for Linux Debain or Redhat based operating system.
 
+## Requirements
+
+The following utility is needed to get a list of devices connected to the PCI bus.
+
+Debain based linux
+    sudo apt-get install pciutils
+
+RedHat based linux
+    sudo yum install pciutils
+
 ## Installation
 
 Add this line to your application's Gemfile:
