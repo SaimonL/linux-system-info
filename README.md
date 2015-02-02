@@ -48,8 +48,8 @@ LinuxSystemInfo.info
 ```ruby
 {
   :os=>"Linux version 3.13.0-45-generic (buildd@phianna) ...", 
-  :uptime=>"up 5 hours, 
-  57 minutes", :users=>"8"
+  :uptime=>"up 5 hours, 57 minutes", 
+  :users=>"8"
 }
 ```
 
@@ -57,7 +57,7 @@ LinuxSystemInfo.info
 
 LinuxSystemInfo.cpu
 
-```
+```ruby
 {
   :model=>
   {
@@ -85,7 +85,7 @@ LinuxSystemInfo.cpu
 
 LinuxSystemInfo.memory
 
-```
+```ruby
 {
   :unit => "Megabyte",
   :total => "7431",
@@ -101,7 +101,7 @@ LinuxSystemInfo.memory
 
 LinuxSystemInfo.storage
 
-```
+```ruby
 {
   "/dev/sda1" =>
   {
@@ -142,7 +142,7 @@ LinuxSystemInfo.storage
 
 LinuxSystemInfo.connection
 
-```
+```ruby
 {
   "eth0" =>
   {
@@ -167,7 +167,7 @@ LinuxSystemInfo.video
 
 LinuxSystemInfo.audio
 
-```
+```ruby
 [
   "Intel Corporation Haswell-ULT HD Audio Controller (rev 09)",
   "Intel Corporation Lynx Point-LP HD Audio Controller (rev 04)"
@@ -178,7 +178,7 @@ LinuxSystemInfo.audio
 
 LinuxSystemInfo.usb
 
-```
+```ruby
 [
   "Intel Corporation Lynx Point-LP USB xHCI HC (rev 04)",
   "Intel Corporation Lynx Point-LP USB EHCI #1 (rev 04)"
@@ -189,7 +189,7 @@ LinuxSystemInfo.usb
 
 LinuxSystemInfo.network
 
-```
+```ruby
 [
   "Intel Corporation Ethernet Connection I218-V (rev 04)",
   "Intel Corporation Wireless 7260 (rev 73)"
@@ -208,12 +208,18 @@ LinuxSystemInfo.hostname
 
 LinuxSystemInfo.to_hash
 
-```
+```ruby
 {
-  :hostname => "example.com",
-  :cpu=>
+  :info => 
   {
-    :model=>
+    :os => "Linux version 3.13.0-45-generic (buildd@phianna) ...", 
+    :uptime => "up 5 hours, 57 minutes", 
+    :users => "8"
+  },
+  :hostname => "example.com",
+  :cpu =>
+  {
+    :model =>
     {
       :name => "Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz",
       :number => "69"
@@ -233,7 +239,7 @@ LinuxSystemInfo.to_hash
     :L2 => "256K",
     :L3 => "3072K"
   },
-  :ram=>
+  :ram =>
   {
     :unit => "Megabyte",
     :total => "15001",
@@ -243,7 +249,7 @@ LinuxSystemInfo.to_hash
     :buffers => "231",
     :cached => "1836"
   },
-  :storage=>
+  :storage =>
   {
     "/dev/sda1" =>
     {
@@ -278,12 +284,12 @@ LinuxSystemInfo.to_hash
       :mount => "/virtualbox"
     }
   },
-  :network=>
+  :network =>
   [
     "Intel Corporation Ethernet Connection I218-V (rev 04)",
     "Intel Corporation Wireless 7260 (rev 73)"
   ],
-  :connection=>
+  :connection =>
   {
     "eth0" =>
     {
