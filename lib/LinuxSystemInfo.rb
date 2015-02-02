@@ -1,7 +1,16 @@
 require 'LinuxSystemInfo/version'
+require 'json'
 
 module LinuxSystemInfo
   class << self
+    def info
+      {
+        os: `cat /proc/version`.strip,
+        uptime: `uptime -p`.strip,
+        users: `users | wc -w`.strip
+      }
+    end
+
     def connection
       output = Hash.new
       network = `ifconfig`
@@ -132,6 +141,7 @@ module LinuxSystemInfo
 
     def to_hash
       {
+        :info       => info,
         :hostname   => hostname,
         :cpu        => cpu,
         :ram        => memory,
@@ -145,7 +155,7 @@ module LinuxSystemInfo
     end
 
     def to_s
-      JSON.pretty_generate to_hash
+      JSON.pretty_generate(to_hash)
     end
   end
 end

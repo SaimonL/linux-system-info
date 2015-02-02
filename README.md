@@ -41,6 +41,18 @@ Or install it yourself as:
 
 ## Usage
 
+#### Info
+
+LinuxSystemInfo.info
+
+```ruby
+{
+  :os=>"Linux version 3.13.0-45-generic (buildd@phianna) ...", 
+  :uptime=>"up 5 hours, 
+  57 minutes", :users=>"8"
+}
+```
+
 #### CPU
 
 LinuxSystemInfo.cpu
