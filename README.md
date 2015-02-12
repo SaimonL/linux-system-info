@@ -47,8 +47,8 @@ LinuxSystemInfo.info
 
 ```ruby
 {
-  :os=>"Linux version 3.13.0-45-generic (buildd@phianna) ...", 
-  :uptime=>"up 5 hours, 57 minutes", 
+  :os=>"Linux version 3.13.0-45-generic (buildd@phianna) ...",
+  :uptime=>"up 5 hours, 57 minutes",
   :users=>"8"
 }
 ```
@@ -159,10 +159,11 @@ LinuxSystemInfo.connection
 
 LinuxSystemInfo.video
 
+```ruby
+[
+  "Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)"
+]
 ```
-"Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)"
-```
-
 #### Audio
 
 LinuxSystemInfo.audio
@@ -210,10 +211,10 @@ LinuxSystemInfo.to_hash
 
 ```ruby
 {
-  :info => 
+  :info =>
   {
-    :os => "Linux version 3.13.0-45-generic (buildd@phianna) ...", 
-    :uptime => "up 5 hours, 57 minutes", 
+    :os => "Linux version 3.13.0-45-generic (buildd@phianna) ...",
+    :uptime => "up 5 hours, 57 minutes",
     :users => "8"
   },
   :hostname => "example.com",

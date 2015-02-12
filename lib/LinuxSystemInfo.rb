@@ -95,9 +95,15 @@ module LinuxSystemInfo
     end
 
     def video
+      data = Array.new
       video = `lspci`
-      video = video.split("\n").find { |e| /VGA/ =~ e }
-      video.split(':')[2].strip
+      # Graphics Controller
+      videos = video.split("\n").grep /(VGA|Graphics Controller)/
+      videos.each do |video|
+        video = video.split(':')
+        data.push video[2].strip
+      end
+      data
     end
 
     def audio
