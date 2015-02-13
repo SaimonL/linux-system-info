@@ -76,6 +76,24 @@ module LinuxSystemInfo
       }
     end
 
+    def processes
+      users = 'root,nobody,syslog'
+      procs = `ps u -U '#{users}' -u '#{users}' -N`
+      output = Hash.new
+      procs = procs.split("\n")
+      procs.slice!(0)
+      procs.each do |proc|
+        proc = proc.split
+        output[proc[1]] = {
+          user: proc[0],      pid: proc[1],    cpu: proc[2],
+           mem: proc[3],      vsz: proc[4],    rss: proc[5],
+           tty: proc[6],     stat: proc[7],  start: proc[8],
+          time: proc[9],  command: proc[10]
+        }
+      end
+      output
+    end
+
     def storage
       output = Hash.new
       storage = `df -h`

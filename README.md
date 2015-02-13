@@ -205,6 +205,24 @@ LinuxSystemInfo.hostname
 "example.com"
 ```
 
+#### Processes
+
+LinuxSystemInfo.processes
+
+```ruby
+{
+  "929"=>{:user=>"avahi", :pid=>"929", :cpu=>"0.0", :mem=>"0.0", :vsz=>"32348", :rss=>"1644", :tty=>"?", :stat=>"S", :start=>"07:42", :time=>"0:00", :command=>"avahi-daemon:"},
+  "932"=>{:user=>"avahi", :pid=>"932", :cpu=>"0.0", :mem=>"0.0", :vsz=>"32224", :rss=>"468", :tty=>"?", :stat=>"S", :start=>"07:42", :time=>"0:00", :command=>"avahi-daemon:"},
+  "1096"=>{:user=>"whoopsie", :pid=>"1096", :cpu=>"0.0", :mem=>"0.0", :vsz=>"430420", :rss=>"4964", :tty=>"?", :stat=>"Ssl", :start=>"07:42", :time=>"0:00", :command=>"whoopsie"},
+  "1229"=>{:user=>"mysql", :pid=>"1229", :cpu=>"0.0", :mem=>"1.7", :vsz=>"922568", :rss=>"136528", :tty=>"?", :stat=>"Ssl", :start=>"07:42", :time=>"0:21", :command=>"/usr/sbin/mysqld"},
+  "1252"=>{:user=>"postgres", :pid=>"1252", :cpu=>"0.0", :mem=>"0.2", :vsz=>"247716", :rss=>"16184", :tty=>"?", :stat=>"S", :start=>"07:42", :time=>"0:00", :command=>"/usr/lib/postgresql/9.3/bin/postgres"},
+  "1284"=>{:user=>"postgres", :pid=>"1284", :cpu=>"0.0", :mem=>"0.0", :vsz=>"248580", :rss=>"2996", :tty=>"?", :stat=>"Ss", :start=>"07:42", :time=>"0:00", :command=>"postgres:"},
+  "1285"=>{:user=>"postgres", :pid=>"1285", :cpu=>"0.0", :mem=>"0.0", :vsz=>"103392", :rss=>"1772", :tty=>"?", :stat=>"Ss", :start=>"07:42", :time=>"0:00", :command=>"postgres:"},
+  [...]
+  "1671"=>{:user=>"kernoops", :pid=>"1671", :cpu=>"0.0", :mem=>"0.0", :vsz=>"37144", :rss=>"1008", :tty=>"?", :stat=>"Ss", :start=>"07:42", :time=>"0:00", :command=>"/usr/sbin/kerneloops"}
+}
+```
+
 #### Hash
 
 LinuxSystemInfo.to_hash
