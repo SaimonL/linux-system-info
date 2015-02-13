@@ -209,6 +209,8 @@ LinuxSystemInfo.hostname
 
 LinuxSystemInfo.processes
 
+Returns all process that are not by root, nobody, and syslog user.
+
 ```ruby
 {
   "929"=>{:user=>"avahi", :pid=>"929", :cpu=>"0.0", :mem=>"0.0", :vsz=>"32348", :rss=>"1644", :tty=>"?", :stat=>"S", :start=>"07:42", :time=>"0:00", :command=>"avahi-daemon:"},
