@@ -321,7 +321,10 @@ LinuxSystemInfo.to_hash
       :ip6 => "fe80::c23f:d5ff:fe6b:d5c8/64"
     }
   },
-  :video => "Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)",
+  :video =>
+  [
+    "Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)"
+  ],
   :audio =>
   [
     "Intel Corporation Haswell-ULT HD Audio Controller (rev 09)",
