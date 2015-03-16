@@ -15,15 +15,15 @@ describe 'With storage info' do
     end
 
     it 'will have valid size' do
-      expect(@storage.first.last[:size]).to match /(nil|\d+(T|G|M|K))/
+      expect(@storage.first.last[:size]).to match /(nil|\d+)(T|G|M|K)?/
     end
 
     it 'will have valid used' do
-      expect(@storage.first.last[:used]).to match /(nil|\d+(T|G|M|K))/
+      expect(@storage.first.last[:used]).to match /(nil|\d+)(T|G|M|K)?/
     end
 
     it 'will have valid available' do
-      expect(@storage.first.last[:available]).to match /(nil|\d+(T|G|M|K))/
+      expect(@storage.first.last[:available]).to match /(nil|\d+)(T|G|M|K)?/
     end
 
     it 'will have valid used_percentage' do
