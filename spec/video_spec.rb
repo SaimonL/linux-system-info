@@ -11,7 +11,7 @@ describe 'With video info' do
     end
 
     it 'will detect correct device' do
-      expect(@video.first).to match /(VGA|Graphics Controller)/
+      expect(@video.first).to match /(Radeon|HD|VGA|Graphics Controller)/
     end
   end
 end
