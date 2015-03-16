@@ -11,7 +11,7 @@ describe 'With audio info' do
     end
 
     it 'will detect correct device' do
-      expect(@audio.first).to match /(Audio)/
+      expect(@audio.first).to match /(Audio|HDA|HDMI)/
     end
   end
 end
