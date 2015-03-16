@@ -115,6 +115,7 @@ module LinuxSystemInfo
       storage.each do |file|
         file = file.split
         next if file[0][0..4] != '/dev/'
+        next if file[1].nil?
         output[file[0]] = {
           :size            => file[1],
           :used            => file[2],
