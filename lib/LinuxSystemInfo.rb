@@ -4,10 +4,28 @@ require 'json'
 module LinuxSystemInfo
   class << self
     def info
+      uptime = `uptime`.strip
+      uptime = uptime.split(',')
+
+      running_time = ''
+      users = ''
+
+      if uptime[1].match(/\d+ (user|users)/).nil?
+        # Debain
+        # 07:54:09 up 3 days, 26 min,  7 users,  load average: 0.20, 0.33, 0.39
+        running_time = [ uptime[0], uptime[1] ].join ', '
+        users = uptime[2]
+      else
+        # centos
+        # 07:53:42 up 10:18,  1 user,  load average: 0.00, 0.00, 0.04
+        running_time = uptime[0]
+        users = uptime[1]
+      end
+
       {
         os: `cat /proc/version`.strip,
-        uptime: `uptime -p`.strip,
-        users: `users | wc -w`.strip
+        uptime: running_time.strip,
+        users: users.strip
       }
     end
 

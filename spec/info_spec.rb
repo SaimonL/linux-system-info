@@ -15,7 +15,7 @@ describe 'With info' do
     end
 
     it 'will have valid uptime' do
-      expect(@os[:uptime]).to match /up \d+ [a-z]+, \d+ [a-z]+/
+      expect(@os[:uptime]).to match /\d+:\d+:\d+ up/
     end
 
     it 'will have valid users count' do
