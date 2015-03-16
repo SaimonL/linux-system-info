@@ -19,7 +19,7 @@ describe 'With info' do
     end
 
     it 'will have valid users count' do
-      expect(@os[:users].to_i).to be > 0
+      expect(@os[:users].to_i).to be >= 0
     end
   end
 end
