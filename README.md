@@ -11,13 +11,13 @@ only for your local computer and for Linux Debain or Redhat based operating syst
 
 The following utility is needed to get a list of devices connected to the PCI bus.
 
-Debain based linux (installed by default)
+Debain based Linux
 
 ```bash
 sudo apt-get install pciutils sysstat
 ````
 
-RedHat based linux (not installed by default)
+RedHat based Linux
 
 ```bash
 sudo yum install pciutils sysstat
