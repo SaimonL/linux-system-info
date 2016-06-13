@@ -59,7 +59,7 @@ module LinuxSystemInfo
     end
 
     def to_s
-      JSON.pretty_generate(to_hash)
+      JSON.pretty_generate(all)
     end
   end
 end

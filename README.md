@@ -7,7 +7,7 @@ Linux System Info is a gem that allows you to get information about you're linux
 computer. It retrieves information such as CPU, RAM, Hard drive etc. This works
 only for your local computer and for Linux Debain or Redhat based operating system.
 
-## Requirements
+# Requirements
 
 The following utility is needed to get a list of devices connected to the PCI bus.
 
@@ -41,9 +41,9 @@ Or install it yourself as:
 
 # Usage
 
-## Info
+### Info
 
-### LinuxSystemInfo.info
+#### LinuxSystemInfo.info
 
 ```ruby
 {
@@ -53,9 +53,9 @@ Or install it yourself as:
 }
 ```
 
-## CPU
+### CPU
 
-### LinuxSystemInfo.cpu
+#### LinuxSystemInfo.cpu
 
 ```ruby
 {
@@ -81,7 +81,7 @@ Or install it yourself as:
 }
 ```
 
-### LinuxSystemInfo.cpu_usage
+#### LinuxSystemInfo.cpu_usage
 
 ```ruby
 {
@@ -99,10 +99,9 @@ Or install it yourself as:
 }
 ```
 
+### RAM
 
-## RAM
-
-### LinuxSystemInfo.memory
+#### LinuxSystemInfo.memory
 
 ```ruby
 {
@@ -116,9 +115,9 @@ Or install it yourself as:
 }
 ```
 
-## Storage
+### Storage
 
-### LinuxSystemInfo.storage
+#### LinuxSystemInfo.storage
 
 ```ruby
 {
@@ -157,9 +156,9 @@ Or install it yourself as:
 }
 ```
 
-## Connection
+### Connection
 
-### LinuxSystemInfo.connection
+#### LinuxSystemInfo.connection
 
 ```ruby
 {
@@ -174,18 +173,18 @@ Or install it yourself as:
 }
 ```
 
-## Video
+### Video
 
-### LinuxSystemInfo.video
+#### LinuxSystemInfo.video
 
 ```ruby
 [
   "Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)"
 ]
 ```
-## Audio
+### Audio
 
-### LinuxSystemInfo.audio
+#### LinuxSystemInfo.audio
 
 ```ruby
 [
@@ -194,9 +193,9 @@ Or install it yourself as:
 ]
 ```
 
-## USB
+### USB
 
-### LinuxSystemInfo.usb
+#### LinuxSystemInfo.usb
 
 ```ruby
 [
@@ -205,9 +204,9 @@ Or install it yourself as:
 ]
 ```
 
-## Network
+### Network
 
-### LinuxSystemInfo.network
+#### LinuxSystemInfo.network
 
 ```ruby
 [
@@ -216,17 +215,17 @@ Or install it yourself as:
 ]
 ```
 
-## Host
+### Host
 
-### LinuxSystemInfo.hostname
+#### LinuxSystemInfo.hostname
 
 ```
 "example.com"
 ```
 
-## Processes
+### Processes
 
-### LinuxSystemInfo.processes
+#### LinuxSystemInfo.processes
 
 Returns all process that are not by root, nobody, and syslog user.
 
@@ -244,9 +243,9 @@ Returns all process that are not by root, nobody, and syslog user.
 }
 ```
 
-## ALL
+### ALL
 
-### LinuxSystemInfo.all
+#### LinuxSystemInfo.all
 
 ```ruby
 {
@@ -353,12 +352,3 @@ Returns all process that are not by root, nobody, and syslog user.
 
 Notice: to_s prints the hash as JSON what is for printing purpose only.
 Example: LinuxSystemInfo.to_s
-
-
-## Contributing
-
-1. Fork it ( https://github.com/SaimonL/LinuxSystemInfo/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
