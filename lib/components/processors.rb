@@ -31,6 +31,28 @@ module LinuxSystemInfo
       output
     end
 
+    # In percentage
+    def cpu_usage
+      status = `mpstat`.split("\n").last.split
+      usage = (100 - status[12].to_f).round(2)
+      usage = 100 if usage > 100
+      usage = 0 if usage < 0
+
+      {
+        user: status[3],
+        nice: status[4],
+        system: status[5],
+        iowait: status[6],
+        irq: status[7],
+        soft: status[8],
+        steal: status[9],
+        guest: status[10],
+        gnice: status[11],
+        idle: status[12],
+        usage: usage
+      }
+    end
+
     def processes
       users = 'root,nobody,syslog'
       procs = `ps u -U '#{users}' -u '#{users}' -N`

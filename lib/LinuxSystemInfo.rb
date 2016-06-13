@@ -43,11 +43,11 @@ module LinuxSystemInfo
       `hostname`.strip
     end
 
-    def to_hash
+    def all
       {
         :info       => info,
         :hostname   => hostname,
-        :cpu        => cpu,
+        :cpu        => { info: cpu, usage: cpu_usage },
         :ram        => memory,
         :storage    => storage,
         :network    => network,
