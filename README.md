@@ -14,13 +14,13 @@ The following utility is needed to get a list of devices connected to the PCI bu
 Debain based Linux
 
 ```bash
-sudo apt-get install pciutils sysstat
+sudo apt-get install pciutils sysstat net-tools
 ````
 
 RedHat based Linux
 
 ```bash
-sudo yum install pciutils sysstat
+sudo yum install pciutils sysstat net-tools
 ````
 
 # Installation

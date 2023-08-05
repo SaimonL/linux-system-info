@@ -13,6 +13,7 @@
 *.a
 mkmf.log
 .idea
+.vscode
 Gemfile.lock
 .ruby-version
 Guardfile
