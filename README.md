@@ -14,13 +14,13 @@ The following utility is needed to get a list of devices connected to the PCI bu
 Debain based Linux
 
 ```bash
-sudo apt-get install pciutils sysstat
+sudo apt-get install pciutils sysstat net-tools
 ````
 
 RedHat based Linux
 
 ```bash
-sudo yum install pciutils sysstat
+sudo yum install pciutils sysstat net-tools
 ````
 
 # Installation
@@ -70,7 +70,7 @@ Or install it yourself as:
   :cores => "2",
   :socket => "1",
   :family => "6",
-  :flags => "fpu vme de pse tsc msr pae mce cx8 apic ...",
+  :flags => ["fpu", "vme", "de", "pse", "tsc", "msr", "pae", "mce", "cx8", "apic"],
   :L1=>
   {
     :d => "32K",
@@ -241,6 +241,31 @@ Returns all process that are not by root, nobody, and syslog user.
   [...]
   "1671"=>{:user=>"kernoops", :pid=>"1671", :cpu=>"0.0", :mem=>"0.0", :vsz=>"37144", :rss=>"1008", :tty=>"?", :stat=>"Ss", :start=>"07:42", :time=>"0:00", :command=>"/usr/sbin/kerneloops"}
 }
+```
+
+### Users
+
+#### LinuxSystemInfo.users
+
+Returns an array of all users including systems
+
+```ruby
+[
+  { 
+    account: "deleteme",
+    uid: 1001,
+    gid: 1001,
+    info: {
+      full_name: "full name", 
+      room_number: "room number", 
+      work_phone: "work phone", 
+      home_phone: "home phone", 
+      other: "other"
+    },
+    home: "/home/deleteme",
+    shell: "/bin/bash"
+  },
+]
 ```
 
 ### ALL

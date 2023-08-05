@@ -8,7 +8,7 @@ module LinuxSystemInfo
       cpu_detail = cpu_detail.split("\n")
 
       output = {
-        :model         => {
+        :model    => {
           :name   => cpu_detail.grep(/model name/).first.split(':').last,
           :number => cpu.grep(/Model/).first.split.last
         },
@@ -18,7 +18,7 @@ module LinuxSystemInfo
         :cores         => cpu.grep(/Core/).first.split.last,
         :socket        => cpu.grep(/Socket/).first.split.last,
         :family        => cpu.grep(/family/).first.split.last,
-        :flags         => cpu_detail.grep(/flags/).first.split(':').last
+        :flags         => cpu_detail.grep(/flags/).first.split(':').last&.split(' ')&.compact&.sort
       }
 
       (1..50).each do |l|

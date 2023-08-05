@@ -2,19 +2,19 @@ module LinuxSystemInfo
   class << self
     def connection
       output = Hash.new
-      network = `ifconfig`
-      network = network.split("\n\n")
+      networks = `ifconfig`
+      networks = networks.split("\n\n")
 
-      network.each do |data|
+      networks.each do |data|
         interface = data.scan(/^[a-z]+\d?/).first
         next if interface == 'lo'
-        next if data.match(/addr:(\d+\.)+\d+/).to_s.sub('addr:', '').empty?
+
         output[interface] = {
-          :mac       => data.match(/HWaddr [a-z0-9:]+/).to_s.sub('HWaddr ', ''),
-          :ip        => data.match(/inet addr:(\d+\.)+\d+/).to_s.sub('inet addr:', ''),
-          :mask      => data.match(/Mask:(\d+\.?)+/).to_s.sub('Mask:', ''),
-          :broadcast => data.match(/Bcast:(\d+\.?)+/).to_s.sub('Bcast:', ''),
-          :ip6       => data.match(/inet6 addr: (([a-z]|\d)+([a-z]|\d)+(:|::)+)+(([a-z]|\d)+(\/)*([a-z]|\d)+)/).to_s.sub('inet6 addr:', '').strip
+          mac:       data.match(/ether [a-z0-9:]+/).to_s.sub('ether ', ''),
+          ip:        data.match(/inet (\d+\.)+\d+/).to_s.sub('inet ', ''),
+          mask:      data.match(/netmask (\d+\.?)+/).to_s.sub('netmask ', ''),
+          broadcast: data.match(/broadcast (\d+\.?)+/).to_s.sub('broadcast ', ''),
+          ip6:       data.match(/inet6 (([a-z]|\d)+([a-z]|\d)+(:|::)+)+(([a-z]|\d)+(\/)*([a-z]|\d)+)/).to_s.sub('inet6 ', '').strip
         }
       end
       output

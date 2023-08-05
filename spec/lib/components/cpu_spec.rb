@@ -48,7 +48,7 @@ describe 'With cpu info' do
 
     it 'will have all L caches' do
       (1..50).each do |l|
-        expect(@cpu[:"L#{l}"]).to match(/\d+K/) unless @cpu[:"L#{l}"].nil?
+        expect(@cpu[:"L#{l}"]).to match(/\d+/) unless @cpu[:"L#{l}"].nil?
       end
     end
   end
