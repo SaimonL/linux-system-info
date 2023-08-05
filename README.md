@@ -70,7 +70,7 @@ Or install it yourself as:
   :cores => "2",
   :socket => "1",
   :family => "6",
-  :flags => "fpu vme de pse tsc msr pae mce cx8 apic ...",
+  :flags => ["fpu", "vme", "de", "pse", "tsc", "msr", "pae", "mce", "cx8", "apic"],
   :L1=>
   {
     :d => "32K",
