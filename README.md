@@ -243,6 +243,31 @@ Returns all process that are not by root, nobody, and syslog user.
 }
 ```
 
+### Users
+
+#### LinuxSystemInfo.users
+
+Returns an array of all users including systems
+
+```ruby
+[
+  { 
+    account: "deleteme",
+    uid: 1001,
+    gid: 1001,
+    info: {
+      full_name: "full name", 
+      room_number: "room number", 
+      work_phone: "work phone", 
+      home_phone: "home phone", 
+      other: "other"
+    },
+    home: "/home/deleteme",
+    shell: "/bin/bash"
+  },
+]
+```
+
 ### ALL
 
 #### LinuxSystemInfo.all
