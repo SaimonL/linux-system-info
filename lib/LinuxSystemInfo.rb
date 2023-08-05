@@ -6,6 +6,8 @@ require 'components/network'
 require 'components/memory'
 require 'components/media'
 
+require 'accounts/users'
+
 module LinuxSystemInfo
   class << self
     def info
@@ -45,16 +47,17 @@ module LinuxSystemInfo
 
     def all
       {
-        :info       => info,
-        :hostname   => hostname,
-        :cpu        => { info: cpu, usage: cpu_usage },
-        :ram        => memory,
-        :storage    => storage,
-        :network    => network,
-        :connection => connection,
-        :video      => video,
-        :audio      => audio,
-        :usb        => usb
+        info:       info,
+        hostname:   hostname,
+        cpu:        { info: cpu, usage: cpu_usage },
+        ram:        memory,
+        storage:    storage,
+        network:    network,
+        connection: connection,
+        video:      video,
+        audio:      audio,
+        usb:        usb,
+        users:      users
       }
     end
 
