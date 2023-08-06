@@ -7,13 +7,19 @@ Gem::Specification.new do |spec|
   spec.version       = LinuxSystemInfo::VERSION
   spec.authors       = ['Saimon Lovell']
   spec.email         = ['staysynchronize@gmail.com']
+
   spec.summary       = %q{Get local linux hardware information.}
   spec.description   = %q{This gem gives information about RAM, CPU, HARD Drives and more. Works only on Linux OS.}
   spec.homepage      = 'https://github.com/SaimonL/linux-system-info'
   spec.license       = 'MIT'
-
   spec.required_ruby_version = '>= 3.0.0'
+
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/SaimonL/linux-system-info'
+  spec.metadata['changelog_uri'] = 'https://github.com/SaimonL/linux-system-info/blob/master/CHANGELOG.md'
+
 
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
