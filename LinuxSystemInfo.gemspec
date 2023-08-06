@@ -26,7 +26,9 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+
+  spec.bindir        = 'exe'
+  spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
