@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.1]
+
+* Convert certain data to numeric
+
 ## [0.2.0]
 
 * Added users

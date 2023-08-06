@@ -1,12 +1,12 @@
 require 'LinuxSystemInfo/version'
 require 'json'
 
-require 'components/processors'
-require 'components/network'
-require 'components/memory'
-require 'components/media'
+require 'LinuxSystemInfo/components/processors'
+require 'LinuxSystemInfo/components/network'
+require 'LinuxSystemInfo/components/memory'
+require 'LinuxSystemInfo/components/media'
 
-require 'accounts/users'
+require 'LinuxSystemInfo/accounts/users'
 
 module LinuxSystemInfo
   class << self
