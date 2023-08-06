@@ -14,9 +14,9 @@ module LinuxSystemInfo
         },
         :address_sizes => cpu_detail.grep(/address sizes/).first.split(':').last,
         :architecture  => cpu.grep(/Architecture/).first.split.last,
-        :threads       => cpu.grep(/Thread/).first.split.last,
-        :cores         => cpu.grep(/Core/).first.split.last,
-        :socket        => cpu.grep(/Socket/).first.split.last,
+        :threads       => cpu.grep(/Thread/).first.split.last.to_i,
+        :cores         => cpu.grep(/Core/).first.split.last.to_i,
+        :socket        => cpu.grep(/Socket/).first.split.last.to_i,
         :family        => cpu.grep(/family/).first.split.last,
         :flags         => cpu_detail.grep(/flags/).first.split(':').last&.split(' ')&.compact&.sort
       }
@@ -39,16 +39,16 @@ module LinuxSystemInfo
       usage = 0 if usage < 0
 
       {
-        user: status[3],
-        nice: status[4],
-        system: status[5],
-        iowait: status[6],
-        irq: status[7],
-        soft: status[8],
-        steal: status[9],
-        guest: status[10],
-        gnice: status[11],
-        idle: status[12],
+        user: status[3].to_f,
+        nice: status[4].to_f,
+        system: status[5].to_f,
+        iowait: status[6].to_f,
+        irq: status[7].to_f,
+        soft: status[8].to_f,
+        steal: status[9].to_f,
+        guest: status[10].to_f,
+        gnice: status[11].to_f,
+        idle: status[12].to_f,
         usage: usage
       }
     end

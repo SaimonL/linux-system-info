@@ -5,12 +5,12 @@ module LinuxSystemInfo
       ram = ram.split("\n")[1].split
       {
         :unit    => 'Megabyte',
-        :total   => ram[1],
-        :used    => ram[2],
-        :free    => ram[3],
-        :shared  => ram[4],
-        :buffers => ram[5],
-        :cached  => ram[6]
+        :total   => ram[1].to_i,
+        :used    => ram[2].to_i,
+        :free    => ram[3].to_i,
+        :shared  => ram[4].to_i,
+        :buffers => ram[5].to_i,
+        :cached  => ram[6].to_i
       }
     end
 
