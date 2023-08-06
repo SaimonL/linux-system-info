@@ -57,7 +57,8 @@ module LinuxSystemInfo
         video:      video,
         audio:      audio,
         usb:        usb,
-        users:      users
+        users:      users,
+        version:    VERSION
       }
     end
 
